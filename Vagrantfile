@@ -84,7 +84,7 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-  config.vm.provision :shell, path: "add-host.sh", privileged: false
-  config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.provision :shell, path: "testapp.sh", privileged: false
+  config.vm.provision :shell, path: "scripts/add-host.sh", privileged: false
+  config.vm.provision :shell, path: "scripts/bootstrap.sh"
+  config.vm.provision :shell, path: "scripts/testapp.sh", privileged: false
 end
