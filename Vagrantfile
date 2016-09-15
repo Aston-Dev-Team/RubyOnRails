@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://atlas.hashicorp.com/search.
 
   config.vm.box = "ubuntu/xenial64"
-  config.vm.box_version = 20160914.0.0
+  config.vm.box_version = "20160914.0.0"
   config.vm.hostname = "vagrant"
 
   config.vm.provider "virtualbox" do |v|
