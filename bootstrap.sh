@@ -8,14 +8,14 @@
 #/usr/lib/ruby/vendor_ruby/hiera/
 #sudo do-release-upgrade
 
-var1="16.04"
-var2=`lsb_release -r | awk '{ print $2 }'`
+#var1="16.04"
+#var2=`lsb_release -r | awk '{ print $2 }'`
 
-if [ "$var2" != "$var1" ]; then
-	sudo do-release-upgrade -d -f DistUpgradeViewNonInteractive
-else
-	echo "Already Ubuntu 16.04"
-fi
+#if [ "$var2" != "$var1" ]; then
+#	sudo do-release-upgrade -d -f DistUpgradeViewNonInteractive
+#else
+#	echo "Already Ubuntu 16.04"
+#fi
 
 
 sudo apt-get -qq update

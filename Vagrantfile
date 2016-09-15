@@ -12,13 +12,18 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/trusty64"
-  config.vm.box_version = "20160908.0.0"
+  config.vm.box = "ubuntu/xenial64"
+  #config.vm.box_version = "20160908.0.0"
+  #config.vm.box_version = "20160907.1.0"
+  config.vm.hostname = "vagrant"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 3072
     #v.gui = true
+    #v.customize ["modifyvm", :id, "--natdnspassdomain1", "on"]
+    #v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     #v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    #v.customize ["modifyvm", :id, "--nic2", "natnetwork", "--nat-network2", "test", "--nictype2", "virtio"]
   end
 
   #config.ssh.insert_key = false
@@ -79,6 +84,7 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-  #config.vm.provision :shell, path: "add-host.sh", privileged: false
+  config.vm.provision :shell, path: "add-host.sh", privileged: false
   config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.provision :shell, path: "testapp.sh", privileged: false
 end
