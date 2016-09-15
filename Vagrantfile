@@ -19,10 +19,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 3072
-    #v.gui = true
-    #v.customize ["modifyvm", :id, "--natdnspassdomain1", "on"]
-    #v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-    #v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    v.gui = true
+    v.customize ["modifyvm", :id, "--natdnspassdomain1", "on"]
+    v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     #v.customize ["modifyvm", :id, "--nic2", "natnetwork", "--nat-network2", "test", "--nictype2", "virtio"]
   end
 
