@@ -19,18 +19,18 @@
 
 
 sudo apt-get -qq update
-sudo apt-get -y dist-upgrade
+sudo apt-get -y -qq dist-upgrade
 
-sudo apt-get -y install zlib1g-dev liblzma-dev
-sudo apt-get -y install bundler
-sudo apt-get -y install gem
-sudo apt-get -y install rails
-sudo apt-get -y install ruby-dev
+sudo apt-get -y -qq install zlib1g-dev liblzma-dev
+sudo apt-get -y -qq install bundler
+sudo apt-get -y -qq install gem
+sudo apt-get -y -qq install rails
+sudo apt-get -y -qq install ruby-dev
 
 sudo gem update
 
 sudo debconf-set-selections <<< 'mysql-server-5.6 mysql-server/root_password password congrats'
 sudo debconf-set-selections <<< 'mysql-server-5.6 mysql-server/root_password_again password congrats'
-sudo apt-get -y install mysql-server-5.7
-sudo apt-get -y install libmysqlclient-dev
+sudo apt-get -y -qq install mysql-server-5.7
+sudo apt-get -y -qq install libmysqlclient-dev
 
