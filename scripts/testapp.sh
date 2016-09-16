@@ -6,13 +6,15 @@ YELLOW='\033[1;33m'
 GREEN='\033[0;32m'
 
 $SHELL<<EOF1
-	#echo $PWD
+	
+	cd apps/
 
 	if [ -d "testapp/" ]; then
 		echo -e "${YELLOW}testapp already created${NC}"
 	else
 		sudo rails new testapp #-d mysql
 	fi
+
 	cd testapp/
 	sudo rails server -b 0.0.0.0 > /dev/null &
 
