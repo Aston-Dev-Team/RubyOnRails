@@ -70,5 +70,12 @@ Vagrant.configure("2") do |config|
   # Add scripts to run after vagrant up. You can force them to run by typing vagrant provision
   config.vm.provision :shell, path: "scripts/add-host.sh", privileged: false
   config.vm.provision :shell, path: "scripts/bootstrap.sh"
-  config.vm.provision :shell, path: "scripts/testapp.sh", privileged: false
+
+  config.vm.define "test", primary: true do |test|
+    config.vm.provision :shell, path: "scripts/testapp.sh", privileged: false
+  end
+
+  config.vm.define "blog" do |blog|
+    config.vm.provision :shell, path: "apps/RubyOnRails/bootstrap.sh", privileged: false
+  end
 end
