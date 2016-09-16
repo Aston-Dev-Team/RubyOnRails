@@ -65,6 +65,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "scripts/", "/home/ubuntu/scripts/", create: true
+  config.vm.synced_folder "apps/", "/home/ubuntu/apps", create: true
 
   # Add scripts to run after vagrant up. You can force them to run by typing vagrant provision
   config.vm.provision :shell, path: "scripts/add-host.sh", privileged: false
