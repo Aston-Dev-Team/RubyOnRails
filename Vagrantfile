@@ -76,6 +76,6 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "blog", autostart: false do |blog|
-    config.vm.provision :shell, path: "apps/RubyOnRails/bootstrap.sh", privileged: false
+    config.vm.provision :shell, path: "apps/DevTeamBlog/bootstrap.sh", privileged: false
   end
 end
