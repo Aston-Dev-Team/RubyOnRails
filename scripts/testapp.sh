@@ -16,7 +16,8 @@ $SHELL<<EOF1
 	fi
 
 	cd testapp/
-	sudo rails server -b 0.0.0.0 > /dev/null &
+	bundle update
+	sudo rails server -b 0.0.0.0 #> /dev/null &
 
 EOF1
 
