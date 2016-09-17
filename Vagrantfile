@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, path: "scripts/add-host.sh", privileged: false
   config.vm.provision :shell, path: "scripts/bootstrap.sh"
 
-  config.vm.define "test", primary: true do |test|
+  config.vm.define "test" do |test|
     config.vm.provision :shell, path: "scripts/testapp.sh", privileged: false
   end
 
